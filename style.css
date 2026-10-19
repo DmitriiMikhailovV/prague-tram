@@ -1,0 +1,30 @@
+/* Палитра «Karmín & Slonovina» — та же, что в приложении (UI/Theme/PraguePalette.swift) */
+:root {
+  --karmin: #9B1226; --karmin-bright: #B8192F; --slonovina: #F3EDD9; --papir: #F8F2E7;
+  --ink: #241A1E; --ink-2: #6B5E5F; --mosaz: #E2A72E; --stroke: rgba(36,26,30,.10);
+  --card: rgba(255,251,243,.85);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --papir: #0B1534; --ink: #F3EDD9; --ink-2: #A9B0C8; --stroke: rgba(255,255,255,.12);
+          --card: rgba(20,33,74,.85); --karmin: #F0566A; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--papir); color: var(--ink);
+  font: 16px/1.6 ui-rounded, -apple-system, "SF Pro Rounded", system-ui, sans-serif; }
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2.5rem max(16px, env(safe-area-inset-left)) 3rem; }
+.livery { height: 10px; background: var(--karmin-bright); border-bottom: 3px solid var(--slonovina); box-shadow: 0 3px 0 var(--karmin); }
+h1 { font-size: 2.2rem; line-height: 1.15; margin: .4rem 0; color: var(--karmin); font-weight: 900; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+.overline { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); font-weight: 800; }
+.plate { display: inline-block; font: 800 1rem ui-monospace, Menlo, monospace; color: var(--karmin);
+  border: 2px solid var(--karmin); background: var(--slonovina); border-radius: 6px; padding: .05rem .45rem; }
+.card { background: var(--card); border: 1px solid var(--stroke); border-radius: 22px; padding: 1.25rem 1.4rem; margin: 1.25rem 0; }
+.links { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin-top: 1.5rem; }
+.btn { display: block; text-decoration: none; text-align: center; font-weight: 900; padding: .9rem 1rem; border-radius: 18px; }
+.btn-primary { background: linear-gradient(var(--karmin-bright), #9B1226); color: var(--slonovina); }
+.btn-secondary { background: var(--card); color: var(--ink); border: 1px solid var(--stroke); }
+.btn:focus-visible { outline: 3px solid var(--mosaz); outline-offset: 2px; }
+a { color: var(--karmin); }
+.muted { color: var(--ink-2); font-size: .9rem; }
+nav.lang { margin: 1rem 0 0; font-weight: 700; }
+footer { margin-top: 3rem; color: var(--ink-2); font-size: .85rem; }
